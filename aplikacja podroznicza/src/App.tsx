@@ -11,7 +11,7 @@ import { Explore } from "./components/Explore";
 
 function App() {
   return (
-    <HashRouter>
+   
       <div className="app">
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="/explore" element={<Explore />} />
         </Routes>
       </div>
-    </HashRouter>
+    
   );
 }
 
