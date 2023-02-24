@@ -63,6 +63,7 @@ const Icon = styled.img`
   }
 `;
 const Txt = styled.a`
+  color: white;
   margin-top: 7px;
   margin-top: 35px;
   @media (max-width: 1120px) {
@@ -157,7 +158,7 @@ export function Navbar() {
   const log = localStorage.getItem("info");
   const navigate = useNavigate();
   const navigateToCreate = () => {
-    navigate("/create-new-trip");
+    navigate("/creator");
   };
   const navigateToLanding = () => {
     navigate("/");

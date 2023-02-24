@@ -6,7 +6,7 @@ import {
   Title,
   TripContainer,
   TripContent,
-  StyledTripListItems,
+  
   
   
 } from "../Styles/create-trip.styled";
@@ -78,7 +78,6 @@ const navigate = useNavigate();
           </BoxList>
           <button className="Buttongototrip" onClick={() => navigate('/mytrippage')}>Go to Your trip</button>
         </div>
-        <StyledTripListItems className="" isHidden={selectedDay === ""} cityId={"NI91uSn6mYWB2lAVHkq0"} selectedDay={selectedDay} addToTrip={addToTrip} currentTrip={currentTrip} />
       </TripContent> 
 
       

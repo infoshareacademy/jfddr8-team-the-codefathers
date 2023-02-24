@@ -21,7 +21,9 @@ import {
 import { TripContext } from "../Provider/TripProvider";
 import { NameTripModal } from "./NameTripModal";
 
-export function CityPage() {
+
+
+export function CityPage(): JSX.Element {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showTripModal, setShowTripModal] = useState(false);
   const navigate = useNavigate();

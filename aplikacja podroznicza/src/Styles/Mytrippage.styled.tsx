@@ -18,6 +18,8 @@ export const Title = styled.h1`
   color: white;
   font-size: 40px;
   font-weight: 400;
+  padding-top: 120px;
+  margin-top: 0;
 `;
 
 export const BoxList = styled.div`
@@ -29,8 +31,8 @@ export const BoxList = styled.div`
   gap: 5px;
   background-color: #d9d9d949;
   border-radius: 10px;
-  width: 60vh;
-  padding: 20px 0;
+  width: fit-content;
+  padding: 20px ;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -48,14 +50,11 @@ export const TripContainer = styled.div`
 
 export const Box = styled.div`
   width: 400px;
-  height: 100px;
   background-color: white;
   border-radius: 10px;
   color: #064547;
   padding: 10px 20px 10px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
   
 `;
 
@@ -64,6 +63,7 @@ export const BoxInfo = styled.span`
   font-family: "Krub", serif;
   font-size: 17px;
   font-weight: 400;
+  
 
 `;
 
@@ -99,6 +99,7 @@ export const BoxButton = styled.button`
     cursor: pointer;
   }
 `
+
 export const Boxnavbar=styled.div`
     width: 100%;
     height: 80px;
@@ -167,6 +168,32 @@ export const Icon=styled.img`
   
   
 `
+
+interface IDeleteDayIcon {
+  deleteDisabled: boolean,
+  onDelete: (dayIndex: number) => void
+}
+
+export const DeleteDayIcon=styled.img<IDeleteDayIcon>`
+padding: 8px;
+ height: 30px;
+width: 30px;
+display: block;
+margin-left: auto;
+
+${(deleteDisabled) =>
+    deleteDisabled &&
+    `
+    `};
+
+  &:hover {
+    cursor: pointer;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+  }
+`
+
+
 export const List=styled.ol`
     width: 80px;
     height: 50px;
@@ -208,13 +235,11 @@ export const Info=styled.span`
         &:hover{
           color:green;
 background-color:lemonchiffon;
-}
-        
-    `
-
+}    
+`
 export const TripList = styled.ul`
   background-color: #ffffff;
-  max-height:400px;
+  height:125px;
   margin-bottom: 0;
   margin-top: 0;
   overflow-y: auto;
@@ -226,35 +251,11 @@ export const TripList = styled.ul`
   }
 `;
 
-export const TripListItemWrapper = styled.div`
-  display: flex;
-`;
-
 export const TripListItem = styled.div`
   padding: 10px 20px;
-`;
-
-export const TripListCheckbox = styled.input`
-  &:checked~div span:last-child {
-    display: inline;
-  }
-`;
-
-export const TripListController = styled.label`
-  display: flex;
   border-bottom: 1px solid #e4e4e4;
-  &:hover{
-    background-color: #dddddd;
-    cursor: pointer;
-  }
 `;
 
-export const TripListDone = styled.span`
-  color: green;
-  margin-left: 20px;
-  display: none;
-  font-weight: 900;
-`;
  export const Buttongototrip=styled.button`
   width: 300px;
   height: 50px;
@@ -263,3 +264,82 @@ export const TripListDone = styled.span`
   display: flex;
   justify-content: center;
  `
+
+ export const AddTripsButton=styled.button`
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  position: absolute;
+  bottom: 14px;
+  
+
+  span:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 2px 10px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+  span:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 2px 5px;
+    font-weight: bold;
+    background-color: #e6e6e6;
+  }
+`
+export const AddTripsContainer=styled.div`
+  width: 300px;
+  height: 500px;
+  background-color: white;
+`
+
+export const TripListWrapper = styled.div`
+  
+`;
+
+export const TripListItemWrapper = styled.div`
+  
+`;
+
+export const TripListCheckbox = styled.input`
+  display: none;
+  &:checked~div {
+    background-color: #448d44;
+  }
+`;
+
+export const TripListController = styled.label`
+  display: block;
+  border-bottom: 1px solid #e4e4e4;
+  &:hover{
+    background-color: #dddddd;
+    cursor: pointer;
+  }
+`;
+
+
+export const ModalContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 460px;
+`;
+export const Buttonswrapper=styled.div`
+  width:300px;
+  height: 50px;
+  
+  display: flex;
+  justify-content: space-between;
+
+`
+export const Headermodal=styled.div`
+width: 300px;
+height: 40px;
+font-family: "Domine",sans-serif;
+text-align: center;
+font-size: 15px;
+`

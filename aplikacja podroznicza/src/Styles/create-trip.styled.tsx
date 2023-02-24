@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-import { TripListItems } from "../components/trip-list-items";
 
 export const Global = createGlobalStyle`
   body {
@@ -95,36 +94,6 @@ export const BoxButton = styled.button`
   }
 `;
 
-export const StyledTripListItems = styled(TripListItems)`
-  ${(props) =>
-    props.isHidden &&
-    `
-    display: none;
-    `};
-`;
-
-export const TripList = styled.ul`
-  background-color: #ffffff;
-  max-height:650px;
-  margin-bottom: 0;
-  margin-top: 0;
-  overflow-y: auto;
-  scrollbar-width: 0;
-  list-style-type: none;
-  padding-left:0;
-  ::-webkit-scrollbar{
-    display: none;
-  }
-`;
-
-export const TripListItem = styled.div`
-  padding: 10px 20px;
-`;
-
-export const TripListWrapper = styled.div`
-  
-`;
-
 export const TripListHeader = styled.h2`
   text-align: center;
   background-color: #efefef;
@@ -133,27 +102,9 @@ export const TripListHeader = styled.h2`
   line-height: 50px;
 `;
 
-export const TripListCheckbox = styled.input`
-  display: none;
-  &:checked~div {
-    background-color: #448d44;
-  }
-`;
-
-export const TripListController = styled.label`
-  display: block;
-  border-bottom: 1px solid #e4e4e4;
-  &:hover{
-    background-color: #dddddd;
-    cursor: pointer;
-  }
-`;
-
 export const TripListButton = styled.button`
   margin: 0 auto;
   display: block;
-  
-  
 `;
 
 export const TripListFooter = styled.div`
