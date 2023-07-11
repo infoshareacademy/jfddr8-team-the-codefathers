@@ -205,15 +205,15 @@ export function Mytrippage({ currentTrip }: IMytrippage) {
               </Box>
               <div
                 style={{
+                  
                   display: myStyle[`${day}`] ? "block" : "none",
                   backgroundColor: "white",
-                  height: "500px",
-                  width: "400px",
+                  
                   marginTop: "20px",
-                  padding: "10px",
-                  marginLeft: "5px",
-                  borderRadius: "15px",
+                  padding: "20px",
+                  borderRadius: "10px",
                   fontFamily: "Krub",
+                  boxSizing: "border-box",
                 }}
               >
                 {list.map(({ name, duration }) => {
@@ -227,6 +227,7 @@ export function Mytrippage({ currentTrip }: IMytrippage) {
                     return (
                       <List>
                         <Record>
+                          <div>
                           <span
                             style={{
                               marginTop: "7px",
@@ -234,12 +235,15 @@ export function Mytrippage({ currentTrip }: IMytrippage) {
                           >
                             {name}
                           </span>
+                          </div>
+                          <div>
                           <span
                             style={{
                               marginTop: "7px",
+                              marginRight: "20px"
                             }}
                           >
-                            duration: {duration}h
+                            {duration}h
                           </span>
                           <button
                             onClick={() => {
@@ -254,6 +258,7 @@ export function Mytrippage({ currentTrip }: IMytrippage) {
                           >
                             add
                           </button>
+                          </div>
                         </Record>
                       </List>
                     );
